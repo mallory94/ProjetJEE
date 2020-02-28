@@ -34,7 +34,7 @@ public class AuthentificationServlet extends HttpServlet {
        	
        	User user = new User(login, passwd);
        	session.setAttribute("user", user);
-     	out.println("Authentification bien enregsitrée");
+     	out.println("Authentification bien enregistrée");
      	out.println("<A href = \"verification\"> Cliquer ici pour vérifier</A>");
         out.println("</body>");
         

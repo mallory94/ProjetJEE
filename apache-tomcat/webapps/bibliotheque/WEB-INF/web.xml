@@ -8,4 +8,12 @@
       <servlet-name>accueil</servlet-name>
       <url-pattern>/</url-pattern>
    </servlet-mapping>
+   <servlet>
+      <servlet-name>authentification</servlet-name>
+      <servlet-class>AuthentificationServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>authentification</servlet-name>
+      <url-pattern>/authentification</url-pattern>
+   </servlet-mapping>
 </web-app>
