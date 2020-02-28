@@ -33,3 +33,7 @@
 0:0:0:0:0:0:0:1 - - [28/Feb/2020:10:50:55 +0100] "GET /docs/images/asf-logo.svg HTTP/1.1" 200 20712
 0:0:0:0:0:0:0:1 - - [28/Feb/2020:10:50:55 +0100] "GET /docs/images/fonts/fonts.css HTTP/1.1" 200 1996
 0:0:0:0:0:0:0:1 - - [28/Feb/2020:10:50:55 +0100] "GET /docs/images/fonts/OpenSans400.woff HTTP/1.1" 200 21956
+0:0:0:0:0:0:0:1 - mallory [28/Feb/2020:12:57:10 +0100] "GET /manager/html HTTP/1.1" 200 20566
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:12:57:10 +0100] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:12:57:25 +0100] "GET /bibliotheque/ HTTP/1.1" 404 1013
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:12:57:29 +0100] "GET /bibliotheque/accueil HTTP/1.1" 200 128
