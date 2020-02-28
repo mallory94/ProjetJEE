@@ -37,3 +37,7 @@
 0:0:0:0:0:0:0:1 - - [28/Feb/2020:12:57:10 +0100] "GET /favicon.ico HTTP/1.1" 200 21630
 0:0:0:0:0:0:0:1 - - [28/Feb/2020:12:57:25 +0100] "GET /bibliotheque/ HTTP/1.1" 404 1013
 0:0:0:0:0:0:0:1 - - [28/Feb/2020:12:57:29 +0100] "GET /bibliotheque/accueil HTTP/1.1" 200 128
+0:0:0:0:0:0:0:1 - mallory [28/Feb/2020:13:02:03 +0100] "GET /manager/html HTTP/1.1" 200 19956
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:13:02:04 +0100] "GET /bibliotheque/ HTTP/1.1" 404 1013
+0:0:0:0:0:0:0:1 - mallory [28/Feb/2020:13:02:14 +0100] "POST /manager/html/start?path=/bibliotheque&org.apache.catalina.filters.CSRF_NONCE=F3BF141E8F5901D55CE84EE8CCB11844 HTTP/1.1" 200 20640
+0:0:0:0:0:0:0:1 - - [28/Feb/2020:13:02:17 +0100] "GET /bibliotheque/ HTTP/1.1" 200 128

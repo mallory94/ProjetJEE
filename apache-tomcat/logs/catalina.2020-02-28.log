@@ -307,3 +307,118 @@ Caused by: java.net.BindException: Address already in use: bind
 28-Feb-2020 12:58:04.295 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
 28-Feb-2020 12:58:04.297 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
 28-Feb-2020 12:58:04.298 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]
+28-Feb-2020 13:01:19.644 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.14
+28-Feb-2020 13:01:19.645 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:        Dec 6 2018 21:13:53 UTC
+28-Feb-2020 13:01:19.646 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.14.0
+28-Feb-2020 13:01:19.646 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Windows 10
+28-Feb-2020 13:01:19.646 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de lOS:        {0}
+28-Feb-2020 13:01:19.646 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+28-Feb-2020 13:01:19.646 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     C:\Program Files\Java\jre1.8.0_211
+28-Feb-2020 13:01:19.647 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_211-b12
+28-Feb-2020 13:01:19.647 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+28-Feb-2020 13:01:19.647 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         Z:\Appli web java\ProjetJEE\apache-tomcat
+28-Feb-2020 13:01:19.647 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         Z:\Appli web java\ProjetJEE\apache-tomcat
+28-Feb-2020 13:01:19.647 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=Z:\Appli web java\ProjetJEE\apache-tomcat\conf\logging.properties
+28-Feb-2020 13:01:19.647 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Feb-2020 13:01:19.647 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+28-Feb-2020 13:01:19.647 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+28-Feb-2020 13:01:19.647 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+28-Feb-2020 13:01:19.648 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=Z:\Appli web java\ProjetJEE\apache-tomcat
+28-Feb-2020 13:01:19.649 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=Z:\Appli web java\ProjetJEE\apache-tomcat
+28-Feb-2020 13:01:19.649 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=Z:\Appli web java\ProjetJEE\apache-tomcat\temp
+28-Feb-2020 13:01:19.649 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [C:\Program Files\Java\jre1.8.0_211\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\app\product\11.2.0\client_1\bin;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Addinsoft\XLSTAT\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\CCM;C:\Windows\CCM;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\doxygen\bin;C:\Program Files\leJOS EV3\bin;c:\Php7;c:\Php7\bin;C:\Program Files (x86)\PsychoPy2;C:\Program Files (x86)\PsychoPy2\DLLs;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\SASHome\Secure\ccme4;C:\Program Files\SASHome\x86\Secure\ccme4;C:\Windows\CCM;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Users\gack\AppData\Local\Microsoft\WindowsApps;;.]
+28-Feb-2020 13:01:19.833 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+28-Feb-2020 13:01:19.973 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+28-Feb-2020 13:01:19.976 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [802] millisecondes
+28-Feb-2020 13:01:20.091 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+28-Feb-2020 13:01:20.091 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.14]
+28-Feb-2020 13:01:20.112 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\bibliotheque]
+28-Feb-2020 13:01:22.000 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDirectory Erreur lors du déploiement du répertoire [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\bibliotheque] de l'application web
+ java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:716)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:695)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1133)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1868)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1045)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:429)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1577)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:424)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:367)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:934)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:831)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1382)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1372)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:907)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:423)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:933)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:637)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:350)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:492)
+Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/bibliotheque]]
+	at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:713)
+	... 37 more
+Caused by: java.lang.IllegalArgumentException: <url-pattern> [./] invalide dans l'association de servlet (servlet mapping)
+	at org.apache.catalina.core.StandardContext.addServletMappingDecoded(StandardContext.java:3156)
+	at org.apache.catalina.Context.addServletMappingDecoded(Context.java:879)
+	at org.apache.catalina.startup.ContextConfig.configureContext(ContextConfig.java:1385)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1162)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:768)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:301)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5029)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	... 38 more
+
+28-Feb-2020 13:01:22.006 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\bibliotheque] de l'application web s'est terminé en [1 894] ms
+28-Feb-2020 13:01:22.006 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\docs]
+28-Feb-2020 13:01:23.157 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Feb-2020 13:01:23.248 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\docs] de l'application web s'est terminé en [1 242] ms
+28-Feb-2020 13:01:23.249 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\examples]
+28-Feb-2020 13:01:26.115 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Feb-2020 13:01:26.190 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\examples] de l'application web s'est terminé en [2 941] ms
+28-Feb-2020 13:01:26.191 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\host-manager]
+28-Feb-2020 13:01:27.429 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Feb-2020 13:01:56.339 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\host-manager] de l'application web s'est terminé en [30 148] ms
+28-Feb-2020 13:01:56.339 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\manager]
+28-Feb-2020 13:01:57.573 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Feb-2020 13:01:57.605 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\manager] de l'application web s'est terminé en [1 266] ms
+28-Feb-2020 13:01:57.606 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\ROOT]
+28-Feb-2020 13:01:58.683 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Feb-2020 13:01:58.690 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [Z:\Appli web java\ProjetJEE\apache-tomcat\webapps\ROOT] de l'application web s'est terminé en [1 083] ms
+28-Feb-2020 13:01:58.695 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+28-Feb-2020 13:01:58.706 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+28-Feb-2020 13:01:58.709 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [38 733] millisecondes
+28-Feb-2020 13:02:14.693 INFOS [http-nio-8080-exec-5] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Feb-2020 13:02:18.737 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/bibliotheque]
+28-Feb-2020 13:02:18.738 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/bibliotheque] a démarré
+28-Feb-2020 13:02:19.968 INFOS [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Feb-2020 13:02:19.975 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Feb-2020 13:03:08.274 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+28-Feb-2020 13:03:08.274 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+28-Feb-2020 13:03:08.382 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+28-Feb-2020 13:03:08.487 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+28-Feb-2020 13:03:08.583 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+28-Feb-2020 13:03:08.585 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+28-Feb-2020 13:03:08.586 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+28-Feb-2020 13:03:08.587 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]
