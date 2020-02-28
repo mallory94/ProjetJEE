@@ -13,10 +13,8 @@ public class AuthentificationServlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 6770265831912217878L;
 	
-	protected void doGet(HttpServletRequest request,
-            HttpServletResponse response)
-	throws IOException, ServletException
-		{
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+											throws IOException, ServletException {
 			
 			String login = request.getParameter("login");
 			String password = request.getParameter("password");
