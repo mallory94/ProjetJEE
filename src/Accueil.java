@@ -20,16 +20,17 @@ public class Accueil extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
+        
         out.println("<html>");
         out.println("<head>");
 
-	    String title = "bonjour jeff";
+	    String title = "bonjour et bienvenue";
 
 	    out.println("<title>" + title + "</title>");
         out.println("</head>");
         out.println("<body bgcolor=\"white\">");
 
-        out.println("<h1>" + title + " big boss" + "</h1>");
+        out.println("<h1>" + title + "</h1>");
         out.println("</body>");
         out.println("</html>");
     }

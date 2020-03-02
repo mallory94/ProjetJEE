@@ -1,4 +1,4 @@
-package persistantdata;
+package persistance;
 
 import java.util.List;
 
