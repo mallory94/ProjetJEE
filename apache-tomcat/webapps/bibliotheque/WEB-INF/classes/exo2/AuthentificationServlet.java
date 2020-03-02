@@ -1,12 +1,14 @@
-package exo1;
+package exo2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
 import data.User;
+import outilsBD.RequeteSQL;
 
 public class AuthentificationServlet extends HttpServlet {
     /**
@@ -20,24 +22,33 @@ public class AuthentificationServlet extends HttpServlet {
     	response.setContentType("text/html");
     	HttpSession session = request.getSession(true);
     	
-    	out.println("<html>");
+    	out.println ("<html>");
     	
-    	out.println("<head>");
+    	out.println ("<head>");
     	String title = "Login/passwd enregsitré";
-    	out.println("<title>" + title + "</title>");
-    	out.println("</head>");
+    	out.println ("<title>" + title + "</title>");
+    	out.println ("</head>");
     	
-    	out.println("<body bgcolor=\"white\">");
+    	out.println ("<body bgcolor=\"white\">");
     	String login = request.getParameter("login");
        	String passwd = request.getParameter("passwd");
-       	
-       	
-       	User user = new User(login, passwd);
-       	session.setAttribute("user", user);
-     	out.println("Authentification bien enregistrée" + user.toString());
-     	out.println("<A href = \"verification\"> Cliquer ici pour vérifier</A>");
+       	// vérification sur la BD
+       	String[] args = new String[2];
+       	args[0] = login; args[1] = passwd;
+		try  { User user = (User) RequeteSQL.execute(2,args);
+		if (user==null)
+			out.println ("Vous n'avez pas été reconnu");
+		else {
+	       	session.setAttribute("user", user);
+	     	out.println("Authentification bien enregsitrée");
+	     	out.println("<A href = \"verification\"> Cliquer ici pour vérifier</A");
+		}
+		} 
+		catch (Exception e) {
+			out.println(e);
+		}
         out.println("</body>");
-        
+
         out.println("</html>");
     }
 

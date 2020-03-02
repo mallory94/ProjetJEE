@@ -8,14 +8,14 @@ import javax.servlet.http.*;
 
 import data.User;
 
-public class AuthentificationServlet extends HttpServlet {
+public class VerifAuthentificationServlet extends HttpServlet {
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {   
+	protected void doGet (HttpServletRequest request,HttpServletResponse response) 
+			throws IOException, ServletException {
 		PrintWriter out = response.getWriter();
     	response.setContentType("text/html");
     	HttpSession session = request.getSession(true);
@@ -23,22 +23,17 @@ public class AuthentificationServlet extends HttpServlet {
     	out.println("<html>");
     	
     	out.println("<head>");
-    	String title = "Login/passwd enregsitré";
+    	String title = "Vérification de l'authentification";
     	out.println("<title>" + title + "</title>");
     	out.println("</head>");
     	
     	out.println("<body bgcolor=\"white\">");
-    	String login = request.getParameter("login");
-       	String passwd = request.getParameter("passwd");
-       	
-       	
-       	User user = new User(login, passwd);
-       	session.setAttribute("user", user);
-     	out.println("Authentification bien enregistrée" + user.toString());
-     	out.println("<A href = \"verification\"> Cliquer ici pour vérifier</A>");
+       	User user = (User) session.getAttribute("user");
+       	if (user!=null)
+       		out.println("Utilisateur enregistré dans la variable session user " + user);
+       	else out.println("pas de variable session user");
         out.println("</body>");
         
         out.println("</html>");
     }
-
 }
