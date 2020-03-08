@@ -1,4 +1,4 @@
-package outilsBD;
+package persistance;
 
 import java.sql.*;
 

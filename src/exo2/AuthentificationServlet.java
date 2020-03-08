@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import data.User;
-import outilsBD.RequeteSQL;
+import persistance.RequeteSQL;
 
 public class AuthentificationServlet extends HttpServlet {
     /**
