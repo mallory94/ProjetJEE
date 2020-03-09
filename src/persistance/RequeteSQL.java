@@ -4,6 +4,7 @@ import java.sql.*;
 
 import data.User;
 import mediatek2020.Mediatheque;
+import mediatek2020.items.Abonne;
 import mediatek2020.items.Utilisateur;
 
 public class RequeteSQL {
@@ -81,6 +82,28 @@ private static String execute0(Object argument) {
 				        return false;
 				      } else {
 				          return true;
+				      }
+
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}		
+			return false ;
+		}
+	}
+	
+	private static Utilisateur executeUserExist(String login , String passwd) throws SQLException {
+		
+		
+		synchronized (requetes[2]) {
+			requetes[2].setString(1,login);
+			requetes[2].setString(2,passwd);
+			try{
+				ResultSet resultSet = requetes[2].executeQuery();
+				 if (resultSet.next() == false) {
+				        return false;
+				      } else {
+				          return new Abonne(new Object[]( resultSet.get));
 				      }
 
 			}
