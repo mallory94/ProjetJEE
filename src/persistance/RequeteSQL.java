@@ -3,12 +3,15 @@ package persistance;
 import java.sql.*;
 
 import data.User;
+import mediatek2020.Mediatheque;
+import mediatek2020.items.Utilisateur;
 
 public class RequeteSQL {
 	private static String[] requetesSQL = {
 			"select numvol,heuredepart,villearrivee from vol where villedepart = ?",
 			"select numvol,villedepart,villearrivee from vol where heuredepart = ?",
-			"select * from user where login = ? and passwd = ?"
+			"select * from utilisateur where LoginUtilisateur = ? and PasswordUtilisateur = ?",
+			"select * from utilisateur where LoginUtilisateur = ?"
 		};
 	private static PreparedStatement [] requetes ;
 	static {
@@ -27,7 +30,6 @@ public class RequeteSQL {
 		switch (numeroRequete) {
 		case 0 : return execute0(argument);
 		case 1 : return execute1(argument);
-		case 2 : return execute2(argument);
 		}
 		return null;
 	}
@@ -67,17 +69,45 @@ private static String execute0(Object argument) {
 			return reponse;
 		}
 
-private static User execute2(Object argument) throws SQLException {
+	private static boolean executeUserExist(String login , String passwd) throws SQLException {
 	
-	String [] args = (String[]) argument;
-		String login = args[0];
-		String passwd = args[1];
+	
 		synchronized (requetes[2]) {
 			requetes[2].setString(1,login);
 			requetes[2].setString(2,passwd);
-			ResultSet resultSet = requetes[2].executeQuery();
-			if (!resultSet.next()) return null;
-			return new User (login, passwd); // à faire : étoffer User et renvoyer tous les champs...
+			try{
+				ResultSet resultSet = requetes[2].executeQuery();
+				 if (resultSet.next() == false) {
+				        return false;
+				      } else {
+				          return true;
+				      }
+
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}		
+			return false ;
+		}
+	}
+	
+	public static boolean executeIsBibliothecaire(String login) throws SQLException {
+		
+		synchronized (requetes[3]) {
+			requetes[3].setString(1,login);
+
+			try{
+				ResultSet resultSet = requetes[3].executeQuery();
+				 if (resultSet.next() == false) {
+				        return false;
+				      } else {
+				    	  return resultSet.getBoolean("Bibliothequaire");
+				      }
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}		
+			return false ;
 		}
 	}
 }

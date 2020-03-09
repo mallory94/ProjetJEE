@@ -10,13 +10,14 @@ import mediatek2020.items.*;
 
 public class MediathequeData implements PersistentMediatheque {
 // Jean-François Brette 01/01/2018
+	
 	static {
 		Mediatheque.getInstance().setData(new MediathequeData());
 	}
-
+	
 	private MediathequeData() {
 	}
-
+	
 	// renvoie la liste de tous les documents de la bibliothèque
 	@Override
 	public List<Document> tousLesDocuments() {
@@ -27,7 +28,7 @@ public class MediathequeData implements PersistentMediatheque {
 	// si pas trouvé, renvoie null
 	@Override
 	public Utilisateur getUser(String login, String password) {
-		return null;
+		return Mediatheque.getInstance().getUser(login, password);
 	}
 
 	// va récupérer le document de numéro numDocument dans la BD
@@ -44,5 +45,10 @@ public class MediathequeData implements PersistentMediatheque {
 		// args [1] --> l'auteur
 		// etc...
 	}
+
+	
+	
+
+
 
 }
