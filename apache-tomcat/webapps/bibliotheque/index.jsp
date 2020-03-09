@@ -18,6 +18,7 @@
 
 <div class="login-page">
   <div class="form">
+  <h2 class="titre">Biblia.Net</h2>
     <form class="login-form" action="/bibliotheque/authentification" method="post">
       <input type="text" name="pseudo" placeholder="Pseudo"/>
       <input type="password" name="mdp" placeholder="Mot de passe"/>

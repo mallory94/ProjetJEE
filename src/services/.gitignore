@@ -1,3 +1,6 @@
 /AuthentificationServlet.class
 /EmprunterServlet.class
 /RendreServlet.class
+/AjouterDocumentServlet.class
+/ListeDocumentsServlet.class
+/ListeDocumentsDispoServlet.class

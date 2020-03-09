@@ -4,7 +4,7 @@
 <head>
 <title>Accueil</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="./indexUser.css" media="all">
+<link rel="stylesheet" type="text/css" href="./theme.css" media="all">
 </head>
 
 <div class="lines">
@@ -32,9 +32,9 @@
   </div>
   
 
-  <!--<div class="btnRetour">
-			<h2><p><a href="./index.php?controleur=utilisateur&action=accueil">Retour</a></p></h2>
-	</div>-->
+  <div class="btnRetour">
+			<h2><p><a href="./index.php?controleur=utilisateur&action=accueil">Déconnexion</a></p></h2>
+	</div>
 </div>
 
 </html>

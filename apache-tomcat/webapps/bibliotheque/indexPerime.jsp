@@ -2,9 +2,9 @@
 <%@ page pageEncoding="UTF-8" %>
 <html class="no-js" lang="fr">
 <head>
-<title>Rendre un Document</title>
+<title>Se connecter</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="./theme.css" media="all">
+<link rel="stylesheet" type="text/css" href="./connexion.css" media="all">
 </head>
 
 <div class="lines">
@@ -16,13 +16,12 @@
 </div>
 
 
-<div class="ajoutDocument-page">
-
+<div class="login-page">
   <div class="form">
-      <h2 class="titre">Biblia.Net - Rendre un Document</h2>
-    <form class="ajoutDocument-form" action="./rendre" method="post">
-      <input type="text" name="numLivreARendre" placeholder="Cote du Livre"/>
-      <button type="submit" name="ajout" value="test">Rendre le livre</button>
+    <form class="login-form" action="/bibliotheque/authentification" method="post">
+      <input type="text" name="pseudo" placeholder="Pseudo"/>
+      <input type="password" name="mdp" placeholder="Mot de passe"/>
+      <button type="submit" name="connexion" value="test">Connexion</button>
     </form>
     
   </div>

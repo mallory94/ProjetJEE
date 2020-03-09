@@ -2,7 +2,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <html class="no-js" lang="fr">
 <head>
-<title>Rendre un Document</title>
+<title>Ajouter un Document</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./theme.css" media="all">
 </head>
@@ -19,10 +19,11 @@
 <div class="ajoutDocument-page">
 
   <div class="form">
-      <h2 class="titre">Biblia.Net - Rendre un Document</h2>
-    <form class="ajoutDocument-form" action="./rendre" method="post">
-      <input type="text" name="numLivreARendre" placeholder="Cote du Livre"/>
-      <button type="submit" name="ajout" value="test">Rendre le livre</button>
+      <h2 class="titre">Biblia.Net - Ajout de Livre</h2>
+    <form class="ajoutDocument-form" action="/bibliotheque/ajout" method="post">
+      <input type="text" name="nomDoc" placeholder="Nom du Livre"/>
+      <input type="text" name="autDoc" placeholder="Auteur du Livre"/>
+      <button type="submit" name="ajout" value="test">Ajout du livre</button>
     </form>
     
   </div>

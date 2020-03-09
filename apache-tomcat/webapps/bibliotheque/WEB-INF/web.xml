@@ -2,7 +2,7 @@
 <web-app>
 	<servlet>
         <servlet-name>Home</servlet-name>
-        <jsp-file>/WEB-INF/index.jsp</jsp-file>
+        <jsp-file>/WEB-INF/connexion.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
@@ -45,5 +45,14 @@
    <servlet-mapping>
       <servlet-name>rendre</servlet-name>
       <url-pattern>/rendre</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>ajout</servlet-name>
+      <servlet-class>services.AjouterDocumentServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>ajout</servlet-name>
+      <url-pattern>/ajout</url-pattern>
    </servlet-mapping>
 </web-app>
