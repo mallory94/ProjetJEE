@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path=""/>
-	<classpathentry kind="lib" path="C:/Users/mallory/Documents/Code/ProjetJEE/ProjetJEE/apache-tomcat/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/mallory/Documents/Code/ProjetJEE/ProjetJEE/baseDeDonnees/ojdbc6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/mallory/Documents/Code/ProjetJEE/ProjetJEE/src/mediathek.jar"/>
+	<classpathentry kind="lib" path="mediathek.jar"/>
+	<classpathentry kind="lib" path="Z:/ProjetJEE/apache-tomcat/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="Z:/ProjetJEE/baseDeDonnees/ojdbc6.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

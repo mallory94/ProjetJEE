@@ -2,9 +2,7 @@ package persistance;
 
 import java.sql.*;
 
-import data.User;
 import mediatek2020.Mediatheque;
-import mediatek2020.items.Abonne;
 import mediatek2020.items.Utilisateur;
 
 public class RequeteSQL {
@@ -12,7 +10,10 @@ public class RequeteSQL {
 			"select numvol,heuredepart,villearrivee from vol where villedepart = ?",
 			"select numvol,villedepart,villearrivee from vol where heuredepart = ?",
 			"select * from utilisateur where LoginUtilisateur = ? and PasswordUtilisateur = ?",
-			"select * from utilisateur where LoginUtilisateur = ?"
+			"select * from utilisateur where LoginUtilisateur = ?",
+			"UPDATE document SET IdUtilisateurEmprunteur = ? WHERE IdDocument = ?;"
+			
+			
 		};
 	private static PreparedStatement [] requetes ;
 	static {
@@ -92,7 +93,7 @@ private static String execute0(Object argument) {
 		}
 	}
 	
-	private static Utilisateur executeUserExist(String login , String passwd) throws SQLException {
+	private static Utilisateur executeGetUtilisateur(String login , String passwd) throws SQLException {
 		
 		
 		synchronized (requetes[2]) {
@@ -101,16 +102,38 @@ private static String execute0(Object argument) {
 			try{
 				ResultSet resultSet = requetes[2].executeQuery();
 				 if (resultSet.next() == false) {
-				        return false;
+				        return null;
 				      } else {
-				          return new Abonne(new Object[]( resultSet.get));
+				          return null;
 				      }
 
 			}
 			catch (Exception e) {
 				e.printStackTrace();
 			}		
-			return false ;
+			return null ;
+		}
+	}
+	
+private static Utilisateur executeGetDocument(String login , String passwd) throws SQLException {
+		
+		
+		synchronized (requetes[2]) {
+			requetes[2].setString(1,login);
+			requetes[2].setString(2,passwd);
+			try{
+				ResultSet resultSet = requetes[2].executeQuery();
+				 if (resultSet.next() == false) {
+				        return null;
+				      } else {
+				          return null;
+				      }
+
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}		
+			return null ;
 		}
 	}
 	
@@ -131,6 +154,22 @@ private static String execute0(Object argument) {
 				e.printStackTrace();
 			}		
 			return false ;
+		}
+	}
+	
+	
+	public static void emprunte(String idUtilisateur, String idDocument) throws SQLException {
+			
+		synchronized (requetes[4]) {
+			requetes[4].setString(1,idUtilisateur);
+			requetes[4].setString(2,idDocument);
+			try{
+				Statement st = BDConnexion.getConnection().createStatement ();
+				int b = requetes[4].executeUpdate();
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}		
 		}
 	}
 }

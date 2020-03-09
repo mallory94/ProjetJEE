@@ -8,6 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import data.User;
+import mediatek2020.Mediatheque;
 import mediatek2020.items.Document;
 import mediatek2020.items.Utilisateur;
 import persistance.MediathequeData;
@@ -34,13 +35,15 @@ public class EmprunterServlet extends HttpServlet {
     	
     	out.println ("<body bgcolor=\"white\"> ");
     	Utilisateur user = (Utilisateur) session.getAttribute( "user" );
-       	String numDoc = request.getParameter("numDoc");
+       	int numDoc = Integer.parseInt(request.getParameter("numDoc"));
        	out.println ("<h2>Page de connexion</h2>" + " <br> login = " + login + " et mdp = " + passwd);
        	// vérification sur la BD
        	
-		try  { 
-			Document doc = (Document) RequeteSQL.execute(2,numDoc); //requete qui emprunte
-		} 
+		try  {
+			
+			Document doc = Mediatheque.getInstance().getDocument(numDoc); //requete qui emprunte
+			Mediatheque.getInstance().emprunter(doc, user);
+		}
 		catch (Exception e) {
 			out.println(e);
 		}

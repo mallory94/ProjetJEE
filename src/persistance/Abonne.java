@@ -1,7 +1,7 @@
-package mediatek2020.items;
+package persistance;
 
 import mediatek2020.Mediatheque;
-import persistance.RequeteSQL;
+import mediatek2020.items.Utilisateur;
 
 public class Abonne implements Utilisateur {
 	private String name;
@@ -12,7 +12,7 @@ public class Abonne implements Utilisateur {
 
 	@Override
 	public Object[] data() {
-		return this.data();
+		return new Object[] { };
 	}
 
 	@Override
