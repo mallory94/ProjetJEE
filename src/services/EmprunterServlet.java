@@ -7,12 +7,13 @@ import java.io.PrintWriter;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import mediatek2020.Mediatheque;
+import data.User;
+import mediatek2020.items.Document;
 import mediatek2020.items.Utilisateur;
 import persistance.MediathequeData;
 import persistance.RequeteSQL;
 
-public class AuthentificationServlet extends HttpServlet {
+public class EmprunterServlet extends HttpServlet {
     /**
 	 * 
 	 */
@@ -22,31 +23,23 @@ public class AuthentificationServlet extends HttpServlet {
 			throws IOException, ServletException {   
 		PrintWriter out = response.getWriter();
     	response.setContentType("text/html");
-    	HttpSession session = request.getSession(true);
+    	HttpSession session = request.getSession(false);
     	
     	out.println ("<html>");
     	
     	out.println ("<head>");
-    	String title = "Login/passwd enregsitré";
+    	String title = "Emprunt";
     	out.println ("<title>" + title + "</title>");
     	out.println ("</head>");
     	
     	out.println ("<body bgcolor=\"white\"> ");
-    	String login = request.getParameter("pseudo");
-       	String passwd = request.getParameter("mdp");
+    	Utilisateur user = (Utilisateur) session.getAttribute( "user" );
+       	String numDoc = request.getParameter("numDoc");
        	out.println ("<h2>Page de connexion</h2>" + " <br> login = " + login + " et mdp = " + passwd);
        	// vérification sur la BD
-       	String[] args = new String[2];
-       	args[0] = login; args[1] = passwd;
+       	
 		try  { 
-			Utilisateur user = Mediatheque.getInstance().getUser(login, passwd);
-			if (user==null)
-				out.println ("Vous n'avez pas été reconnu");
-			else {
-		       	session.setAttribute("user", user);
-		     	out.println("Authentification bien enregsitrée");
-		     	out.println("<A href = \"verification\"> Cliquer ici pour vérifier</A");
-			}
+			Document doc = (Document) RequeteSQL.execute(2,numDoc); //requete qui emprunte
 		} 
 		catch (Exception e) {
 			out.println(e);
