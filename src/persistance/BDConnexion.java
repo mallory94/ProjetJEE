@@ -11,8 +11,8 @@ public class BDConnexion {
 		try {driver = "oracle.jdbc.OracleDriver";
 			Class.forName(driver);
 			url = "jdbc:oracle:thin:@vs-oracle2:1521:ORCL";
-			login = "SYSTEM";
-			passwd = "passwd";
+			login = "etudiant";
+			passwd = "etudiant";
 			connection = DriverManager.getConnection(url,login,passwd);
 		}
 		catch (Exception e) {

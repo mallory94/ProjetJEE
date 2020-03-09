@@ -13,3 +13,14 @@
 0:0:0:0:0:0:0:1 - mallory [09/Mar/2020:08:08:20 +0100] "POST /manager/html/reload?path=/bibliotheque&org.apache.catalina.filters.CSRF_NONCE=79E5E9E72DEDA2D7395D12AEADE389BC HTTP/1.1" 200 20660
 0:0:0:0:0:0:0:1 - - [09/Mar/2020:08:08:23 +0100] "GET /bibliotheque/ HTTP/1.1" 404 1013
 0:0:0:0:0:0:0:1 - - [09/Mar/2020:08:08:26 +0100] "GET /bibliotheque/index HTTP/1.1" 200 135
+0:0:0:0:0:0:0:1 - mallory [09/Mar/2020:10:25:16 +0100] "GET /manager/html HTTP/1.1" 200 20567
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:25:16 +0100] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:25:20 +0100] "GET / HTTP/1.1" 200 11488
+0:0:0:0:0:0:0:1 - mallory [09/Mar/2020:10:25:21 +0100] "GET /manager/html HTTP/1.1" 200 20567
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:25:23 +0100] "GET /bibliotheque/ HTTP/1.1" 404 1013
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:25:34 +0100] "GET /bibliotheque/connexion.jsp HTTP/1.1" 200 890
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:25:34 +0100] "GET /bibliotheque/connexion.css HTTP/1.1" 200 4831
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:26:26 +0100] "POST /bibliotheque/authentification HTTP/1.1" 500 3746
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:28:21 +0100] "GET /bibliotheque/connexion.jsp HTTP/1.1" 200 896
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:28:21 +0100] "GET /bibliotheque/connexion.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:28:21 +0100] "GET /favicon.ico HTTP/1.1" 200 21630
