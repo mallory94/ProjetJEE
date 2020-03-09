@@ -11,7 +11,8 @@ public class RequeteSQL {
 			"select numvol,villedepart,villearrivee from vol where heuredepart = ?",
 			"select * from utilisateur where LoginUtilisateur = ? and PasswordUtilisateur = ?",
 			"select * from utilisateur where LoginUtilisateur = ?",
-			"UPDATE document SET IdUtilisateurEmprunteur = ? WHERE IdDocument = ?;"
+			"UPDATE document SET IdUtilisateurEmprunteur = ? WHERE IdDocument = ?;",
+			"UPDATE document SET IdUtilisateurEmprunteur = NULL WHERE IdDocument = ?;"
 			
 			
 		};
@@ -158,14 +159,30 @@ private static Utilisateur executeGetDocument(String login , String passwd) thro
 	}
 	
 	
-	public static void emprunte(String idUtilisateur, String idDocument) throws SQLException {
+	public static void executeEmprunte(int idUtilisateur, int idDocument) throws SQLException {
 			
 		synchronized (requetes[4]) {
-			requetes[4].setString(1,idUtilisateur);
-			requetes[4].setString(2,idDocument);
+			requetes[4].setInt(1,idUtilisateur);
+			requetes[4].setInt(2,idDocument);
 			try{
 				Statement st = BDConnexion.getConnection().createStatement ();
 				int b = requetes[4].executeUpdate();
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}		
+		}
+	}
+	
+	
+	
+	public static void executeRendre(int idUtilisateur, int idDocument) throws SQLException {
+		
+		synchronized (requetes[5]) {
+			requetes[5].setInt(1,idDocument);
+			try{
+				Statement st = BDConnexion.getConnection().createStatement ();
+				int b = requetes[5].executeUpdate();
 			}
 			catch (Exception e) {
 				e.printStackTrace();
