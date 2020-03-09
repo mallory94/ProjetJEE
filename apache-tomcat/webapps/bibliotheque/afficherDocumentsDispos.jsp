@@ -21,18 +21,10 @@
   <div class="form">
       <h2 class="titre">Biblia.Net</h2>
 	
-	<form class="ajoutDocument-form" action="./afficherDocumentsDispos" method="post">
-		<button type="submit" name="serviceRendre" value="test">Rendre un Livre</button>
-	</form>
-	
-    <form class="ajoutDocument-form" action="./emprunterDocument.jsp" method="post">
-      <button type="submit" name="serviceEmprunt" value="test">Emprunter un Livre</button>
-    </form>
-
-
-    <form class="ajoutDocument-form" action="./rendreDocument.jsp" method="post">
-      <button type="submit" name="serviceRendre" value="test">Rendre un Livre</button>
-    </form>
+	<% List<Document> documents = session.getAttribute( "listeDocument" );
+		for (Document doc : documents) { %> 
+			if doc.
+	<%} %> 
 
   </div>
   

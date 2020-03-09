@@ -55,4 +55,14 @@
       <servlet-name>ajout</servlet-name>
       <url-pattern>/ajout</url-pattern>
    </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>afficherDocumentsDispos</servlet-name>
+      <servlet-class>services.ListeDocumentsDispoServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>afficherDocumentsDispos</servlet-name>
+      <url-pattern>/afficherDocumentsDispos</url-pattern>
+   </servlet-mapping>
+   
 </web-app>

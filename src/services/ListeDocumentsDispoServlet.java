@@ -25,6 +25,7 @@ public class ListeDocumentsDispoServlet {
 		try  { 
 			List<Document> listeDoc = Mediatheque.getInstance().tousLesDocuments();
 			session.setAttribute("listeDocument", listeDoc);
+			
 		} 
 		catch (Exception e) {
 			out.println(e);
