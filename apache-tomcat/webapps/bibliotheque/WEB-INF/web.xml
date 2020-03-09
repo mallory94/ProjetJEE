@@ -11,7 +11,7 @@
    
    <servlet>
       <servlet-name>authentification</servlet-name>
-      <servlet-class>exo2.AuthentificationServlet</servlet-class>
+      <servlet-class>services.AuthentificationServlet</servlet-class>
    </servlet>
    <servlet-mapping>
       <servlet-name>authentification</servlet-name>
@@ -19,11 +19,11 @@
    </servlet-mapping>
    
    <servlet>
-      <servlet-name>verification</servlet-name>
-      <servlet-class>exo1.VerifAuthentificationServlet</servlet-class>
+      <servlet-name>emprunt</servlet-name>
+      <servlet-class>services.EmprunterServlet</servlet-class>
    </servlet>
    <servlet-mapping>
-      <servlet-name>verification</servlet-name>
-      <url-pattern>/verification</url-pattern>
+      <servlet-name>emprunt</servlet-name>
+      <url-pattern>/emprunt</url-pattern>
    </servlet-mapping>
 </web-app>

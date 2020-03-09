@@ -1,5 +1,6 @@
 package persistance;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import mediatek2020.*;
@@ -28,7 +29,12 @@ public class MediathequeData implements PersistentMediatheque {
 	// si pas trouvé, renvoie null
 	@Override
 	public Utilisateur getUser(String login, String password) {
-		return Mediatheque.getInstance().getUser(login, password);
+		try {
+			return RequeteSQL.executeGetUtilisateur(login,password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	// va récupérer le document de numéro numDocument dans la BD

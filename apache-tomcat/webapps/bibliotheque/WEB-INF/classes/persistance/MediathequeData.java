@@ -1,5 +1,6 @@
 package persistance;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import mediatek2020.*;
@@ -10,13 +11,14 @@ import mediatek2020.items.*;
 
 public class MediathequeData implements PersistentMediatheque {
 // Jean-François Brette 01/01/2018
+	
 	static {
 		Mediatheque.getInstance().setData(new MediathequeData());
 	}
-
+	
 	private MediathequeData() {
 	}
-
+	
 	// renvoie la liste de tous les documents de la bibliothèque
 	@Override
 	public List<Document> tousLesDocuments() {
@@ -27,6 +29,11 @@ public class MediathequeData implements PersistentMediatheque {
 	// si pas trouvé, renvoie null
 	@Override
 	public Utilisateur getUser(String login, String password) {
+		try {
+			return RequeteSQL.executeGetUtilisateur(login,password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
@@ -40,9 +47,12 @@ public class MediathequeData implements PersistentMediatheque {
 
 	@Override
 	public void nouveauDocument(int type, Object... args) {
-		// args[0] -> le titre
-		// args [1] --> l'auteur
-		// etc...
+		
 	}
+
+	
+	
+
+
 
 }

@@ -1,4 +1,4 @@
-package outilsBD;
+package persistance;
 
 import java.sql.*;
 
@@ -8,16 +8,22 @@ public class BDConnexion {
 	private static Connection connection ;
 	
 	static { 
-		try {driver = "oracle.jdbc.OracleDriver";
+		try {
+			System.out.println("avant le driver");
+			driver = "oracle.jdbc.OracleDriver";
+			System.out.println("apres le driver");
+			System.out.println("Class.forName(driver);");
 			Class.forName(driver);
-			url = "jdbc:oracle:thin:@vs-oracle2:1521:ORCL";
-			login = "etudiant";
-			passwd = "etudiant";
+			System.out.println("fin de Class.forName(driver);");
+			url = "jdbc:oracle:thin:@localhost:1521:XE";
+			login = "ETUDIANT";
+			passwd = "ETUDIANT";
 			connection = DriverManager.getConnection(url,login,passwd);
 		}
 		catch (Exception e) {
 			// problème, on arrête le serveur
 			System.out.println(e);
+			e.printStackTrace();
 			System.exit(1);
 		}
 	}

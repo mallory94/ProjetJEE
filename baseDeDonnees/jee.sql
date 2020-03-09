@@ -114,7 +114,7 @@ INSERT INTO document(NomDocument,AuteurDocument) VALUES ('The Odd Sisters','Sere
 INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Evil Thing','Serena Valentino');
 SELECT * FROM document;
 
-PROMPT *** AJOUT D'UN EMPRUNT***
+PROMPT *** AJOUT D UN EMPRUNT***
 UPDATE document SET IdUtilisateurEmprunteur = 3 WHERE IdDocument = 4;
 
 
