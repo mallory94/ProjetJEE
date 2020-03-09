@@ -26,7 +26,7 @@ public class AuthentificationServlet extends HttpServlet {
     	
     	String login = request.getParameter("pseudo");
        	String passwd = request.getParameter("mdp");
-       	out.println ("<h2>Page de connexion</h2>" + " <br> login = " + login + " et mdp = " + passwd);
+       	
        	// vérification sur la BD
        	String[] args = new String[2];
        	args[0] = login; args[1] = passwd;

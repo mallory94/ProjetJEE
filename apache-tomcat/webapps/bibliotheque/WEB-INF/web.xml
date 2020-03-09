@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
+	<servlet>
+        <servlet-name>Home</servlet-name>
+        <jsp-file>/WEB-INF/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <session-config><session-timeout>30</session-timeout></session-config>
+	
+	
    <servlet>
       <servlet-name>accueil</servlet-name>
       <servlet-class>Accueil</servlet-class>
@@ -25,5 +36,14 @@
    <servlet-mapping>
       <servlet-name>emprunt</servlet-name>
       <url-pattern>/emprunt</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>rendre</servlet-name>
+      <servlet-class>services.RendreServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>rendre</servlet-name>
+      <url-pattern>/rendre</url-pattern>
    </servlet-mapping>
 </web-app>

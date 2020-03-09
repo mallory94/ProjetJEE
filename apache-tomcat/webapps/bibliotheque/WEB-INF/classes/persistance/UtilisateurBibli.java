@@ -16,14 +16,14 @@ public class UtilisateurBibli implements Utilisateur {
 
 	@Override
 	public Object[] data() {
-		return new Object[] { login };
+		return new Object[] { idUtilisateur, login, isBiliothecaire };
 	}
 
 	@Override
 	public boolean isBibliothecaire() {
 		boolean b = false;
 		try {
-			 b = RequeteSQL.executeIsBibliothecaire(login);
+			 b = RequeteSQL.executeIsBibliothecaire(idUtilisateur);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

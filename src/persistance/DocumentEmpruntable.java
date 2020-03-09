@@ -13,23 +13,25 @@ public class DocumentEmpruntable implements Document {
 	private int idDocument;
 	private String NomDocument;
 	private String AuteurDocument;
-	private boolean Disponible;
+	private int IdUtilisateurEmprunteur;
 	
-	public DocumentEmpruntable(int idDocument, String NomDocument, String AuteurDocument, boolean Disponible) {
+	public DocumentEmpruntable(int idDocument, String NomDocument, String AuteurDocument, int IdUtilisateurEmprunteur) {
 		this.idDocument = idDocument;
 		this.NomDocument = NomDocument;
 		this.AuteurDocument = AuteurDocument;
-		this.Disponible = Disponible;
+		this.IdUtilisateurEmprunteur = IdUtilisateurEmprunteur;
 	}
 	
 	@Override
 	public Object[] data() {
-		return new Object[] { idDocument, NomDocument, AuteurDocument , Disponible };
+		return new Object[] { idDocument, NomDocument, AuteurDocument , IdUtilisateurEmprunteur };
 	}
 
 	@Override
 	public void emprunter(Utilisateur utilisateur) throws EmpruntException {
 		try {
+			System.out.println("id utilisateur = " + (int) utilisateur.data()[0]);
+			System.out.println("id document = " + idDocument);
 			RequeteSQL.executeEmprunte((int) utilisateur.data()[0], idDocument);
 		} catch (SQLException e) {
 			e.printStackTrace();

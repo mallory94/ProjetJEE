@@ -3,21 +3,18 @@ package services;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import mediatek2020.Mediatheque;
 import mediatek2020.items.Document;
 import mediatek2020.items.Utilisateur;
-import persistance.MediathequeData;
-import persistance.RequeteSQL;
 
-public class EmprunterServlet extends HttpServlet {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class RendreServlet extends HttpServlet{
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {   
@@ -25,17 +22,16 @@ public class EmprunterServlet extends HttpServlet {
     	HttpSession session = request.getSession(false);
     	
     	Utilisateur user = (Utilisateur) session.getAttribute( "user" );
-       	int numDoc = Integer.parseInt(request.getParameter("numDoc"));
+       	int numDoc = Integer.parseInt(request.getParameter("numLivreARendre"));
        	
 		try  {
 			
 			Document doc = Mediatheque.getInstance().getDocument(numDoc); //requete qui emprunte
-			System.out.println(" id du document dans EmprunterServlet = " + doc.data()[0]);
-			Mediatheque.getInstance().emprunter(doc, user);
+			System.out.println(" id du document dans RendreServlet = " + doc.data()[0]);
+			doc.rendre(user);
 		}
 		catch (Exception e) {
-			e.printStackTrace();;
+			e.printStackTrace();
 		}
     }
-
 }

@@ -22,7 +22,7 @@ public class MediathequeData implements PersistentMediatheque {
 	// renvoie la liste de tous les documents de la bibliothèque
 	@Override
 	public List<Document> tousLesDocuments() {
-		return null;
+		return RequeteSQL.executeGetTousLesDocuments();
 	}
 
 	// va récupérer le User dans la BD et le renvoie
@@ -42,17 +42,22 @@ public class MediathequeData implements PersistentMediatheque {
 	// si pas trouvé, renvoie null
 	@Override
 	public Document getDocument(int numDocument) {
+		try {
+			return RequeteSQL.executeGetDocument(numDocument);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
 	@Override
 	public void nouveauDocument(int type, Object... args) {
-		
+		//args[0] = NomDocument | args[1] = AuteurDocument
+		try {
+			RequeteSQL.executeNouveauDocument((String) args[0], (String)args[1]);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
-
-	
-	
-
-
 
 }

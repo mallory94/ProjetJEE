@@ -4,7 +4,7 @@
 <head>
 <title>Se connecter</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="./connexion.css" media="all">
+<link rel="stylesheet" type="text/css" href="./index.css" media="all">
 </head>
 
 <div class="lines">
