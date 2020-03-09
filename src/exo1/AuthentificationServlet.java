@@ -7,6 +7,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import data.User;
+import mediatek2020.items.Abonne;
+import mediatek2020.items.Utilisateur;
 
 public class AuthentificationServlet extends HttpServlet {
     /**
@@ -32,7 +34,7 @@ public class AuthentificationServlet extends HttpServlet {
        	String passwd = request.getParameter("passwd");
        	
        	
-       	User user = new User(login, passwd);
+       	Utilisateur user = new Abonne(login);
        	session.setAttribute("user", user);
      	out.println("Authentification bien enregistrée" + user.toString());
      	out.println("<A href = \"verification\"> Cliquer ici pour vérifier</A>");
