@@ -26,7 +26,7 @@
     
   </div>
   <div class="btnRetour">
-			<h2><p><a href="./index.jsp">Déconnexion</a></p></h2>
+			<h2><p><a href="./deconnexion">Déconnexion</a></p></h2>
 	</div>
 </div>
 
