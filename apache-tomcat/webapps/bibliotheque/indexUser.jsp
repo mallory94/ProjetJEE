@@ -22,16 +22,16 @@
       <h2 class="titre">Biblia.Net</h2>
 	
 	<form class="ajoutDocument-form" action="./afficherDocumentsDispos" method="post">
-		<button type="submit" name="serviceRendre" value="test">afficher les livres disponibles</button>
+		<button type="submit" name="serviceRendre" value="test">afficher les documents disponibles</button>
 	</form>
 	
     <form class="ajoutDocument-form" action="./emprunterDocument.jsp" method="post">
-      <button type="submit" name="serviceEmprunt" value="test">Emprunter un Livre</button>
+      <button type="submit" name="serviceEmprunt" value="test">Emprunter un document</button>
     </form>
 
 
     <form class="ajoutDocument-form" action="./rendreDocument.jsp" method="post">
-      <button type="submit" name="serviceRendre" value="test">Rendre un Livre</button>
+      <button type="submit" name="serviceRendre" value="test">Rendre un document</button>
     </form>
 
   </div>

@@ -21,8 +21,8 @@
   <div class="form">
       <h2 class="titre">Biblia.Net - Rendre un Document</h2>
     <form class="ajoutDocument-form" action="./rendre" method="post">
-      <input type="text" name="numLivreARendre" placeholder="Cote du Livre"/>
-      <button type="submit" name="ajout" value="test">Rendre le livre</button>
+      <input type="text" name="numLivreARendre" placeholder="Cote du Document"/>
+      <button type="submit" name="ajout" value="test">Rendre le Document</button>
     </form>
     
   </div>

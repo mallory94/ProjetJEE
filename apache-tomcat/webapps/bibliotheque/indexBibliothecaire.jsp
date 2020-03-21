@@ -21,7 +21,7 @@
   <div class="form">
       <h2 class="titre">Biblia.Net</h2>
     <form class="ajoutDocument-form" action="./ajoutDocument.jsp" method="post">
-      <button type="submit" name="service" value="test">Ajouter un Livre</button>
+      <button type="submit" name="service" value="test">Ajouter un document</button>
     </form>
     
   </div>
