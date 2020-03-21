@@ -2,3 +2,6 @@
 /EmprunterServlet.class
 /RendreServlet.class
 /AjouterDocumentServlet.class
+/ListeDocumentsServlet.class
+/ListeDocumentsDispoServlet.class
+/DeconnexionServlet.class
