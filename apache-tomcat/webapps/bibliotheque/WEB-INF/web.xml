@@ -65,4 +65,13 @@
       <url-pattern>/afficherDocumentsDispos</url-pattern>
    </servlet-mapping>
    
+   <servlet>
+      <servlet-name>Deconnexion</servlet-name>
+      <servlet-class>services.DeconnexionServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>Deconnexion</servlet-name>
+      <url-pattern>/deconnexion</url-pattern>
+   </servlet-mapping>
+   
 </web-app>
