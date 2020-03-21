@@ -14,17 +14,19 @@ public class DocumentEmpruntable implements Document {
 	private String NomDocument;
 	private String AuteurDocument;
 	private Integer IdUtilisateurEmprunteur;
+	private String TypeDocument;
 	
-	public DocumentEmpruntable(int idDocument, String NomDocument, String AuteurDocument, Integer IdUtilisateurEmprunteur) {
+	public DocumentEmpruntable(int idDocument, String NomDocument, String AuteurDocument, Integer IdUtilisateurEmprunteur, String TypeDocument) {
 		this.idDocument = idDocument;
 		this.NomDocument = NomDocument;
 		this.AuteurDocument = AuteurDocument;
 		this.IdUtilisateurEmprunteur = IdUtilisateurEmprunteur;
+		this.TypeDocument = TypeDocument;
 	}
 	
 	@Override
 	public Object[] data() {
-		return new Object[] { idDocument, NomDocument, AuteurDocument , IdUtilisateurEmprunteur };
+		return new Object[] { idDocument, NomDocument, AuteurDocument , IdUtilisateurEmprunteur , TypeDocument};
 	}
 
 	@Override
