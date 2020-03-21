@@ -18,6 +18,7 @@ CREATE TABLE document (
   NomDocument VARCHAR(30) NOT NULL,
   AuteurDocument VARCHAR(30) NOT NULL,
   IdUtilisateurEmprunteur INTEGER DEFAULT NULL,
+  TypeDocument VARCHAR(30) NOT NULL,
   CONSTRAINT PK_document PRIMARY KEY (IdDocument)
 );
 --DISPONIBLE = 1, INDISPONIBLE = 0
@@ -95,7 +96,7 @@ REM JEU DE TEST
 REM ********************************************************************
 PROMPT ***JEU DE TEST***
 PROMPT *** INSERT INTO UTILISATEUR***
-INSERT INTO utilisateur(LoginUtilisateur,PasswordUtilisateur,Bibliothequaire) VALUES ('Ursula','SoulPassword',0);
+INSERT INTO utilisateur(LoginUtilisateur,PasswordUtilisateur,Bibliothequaire) VALUES ('Ursula','Ursula',0);
 INSERT INTO utilisateur(LoginUtilisateur,PasswordUtilisateur,Bibliothequaire) VALUES ('Grimhilde','ApplePassword',0);
 INSERT INTO utilisateur(LoginUtilisateur,PasswordUtilisateur,Bibliothequaire) VALUES ('Maleficent','GreenFirePassword',1);
 INSERT INTO utilisateur(LoginUtilisateur,PasswordUtilisateur,Bibliothequaire) VALUES ('Cruella','FurPassword',0);
@@ -105,13 +106,13 @@ INSERT INTO utilisateur(LoginUtilisateur,PasswordUtilisateur,Bibliothequaire) VA
 SELECT * FROM utilisateur;
 
 PROMPT *** INSERT INTO DOCUMENT***
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Fairest of ALL','Serena Valentino');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('The Beast Within','Serena Valentino');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Poor Unfortunate Soul','Serena Valentino');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Mistress of All Evil','Serena Valentino');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Mother Knows Best','Serena Valentino');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('The Odd Sisters','Serena Valentino');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Evil Thing','Serena Valentino');
+INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Fairest of ALL','Serena Valentino', 'livre');
+INSERT INTO document(NomDocument,AuteurDocument) VALUES ('The Beast Within','Serena Valentino', 'livre');
+INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Poor Unfortunate Soul','Serena Valentino', 'livre');
+INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Mistress of All Evil','Serena Valentino', 'livre');
+INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Mother Knows Best','Serena Valentino', 'livre');
+INSERT INTO document(NomDocument,AuteurDocument) VALUES ('The Odd Sisters','Serena Valentino', 'livre');
+INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Evil Thing','Serena Valentino', 'livre');
 SELECT * FROM document;
 
 PROMPT *** AJOUT D UN EMPRUNT***
