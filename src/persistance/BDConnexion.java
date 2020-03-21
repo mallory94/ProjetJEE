@@ -15,10 +15,12 @@ public class BDConnexion {
 			System.out.println("Class.forName(driver);");
 			Class.forName(driver);
 			System.out.println("fin de Class.forName(driver);");
-			url = "jdbc:oracle:thin:@localhost:1521:XE";
-			login = "ETUDIANT";
-			passwd = "ETUDIANT";
+			url = "jdbc:oracle:thin:@192.168.0.20:1521:XE";
+			login = "SYSTEM";
+			passwd = "system";
+			System.out.println("début login");
 			connection = DriverManager.getConnection(url,login,passwd);
+			System.out.println("fin login");
 		}
 		catch (Exception e) {
 			// problème, on arrête le serveur
