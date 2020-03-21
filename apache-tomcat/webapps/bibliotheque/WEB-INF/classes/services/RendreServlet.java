@@ -29,6 +29,7 @@ public class RendreServlet extends HttpServlet{
 			Document doc = Mediatheque.getInstance().getDocument(numDoc); //requete qui emprunte
 			System.out.println(" id du document dans RendreServlet = " + doc.data()[0]);
 			doc.rendre(user);
+			response.sendRedirect("./livreRendu.jsp");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
