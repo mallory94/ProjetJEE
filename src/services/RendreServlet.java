@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import mediatek2020.Mediatheque;
+import mediatek2020.RechercheDocException;
 import mediatek2020.items.Document;
+import mediatek2020.items.RetourException;
 import mediatek2020.items.Utilisateur;
 
 public class RendreServlet extends HttpServlet{
@@ -27,12 +29,25 @@ public class RendreServlet extends HttpServlet{
 		try  {
 			
 			Document doc = Mediatheque.getInstance().getDocument(numDoc); //requete qui emprunte
-			System.out.println(" id du document dans RendreServlet = " + doc.data()[0]);
+			if (doc == null) {
+				throw new RechercheDocException();
+			}
 			doc.rendre(user);
-			response.sendRedirect("./livreRendu.jsp");
+			response.sendRedirect("./documentRendu.jsp");
+		}
+		catch (RechercheDocException re) {
+			session.setAttribute("erreur", "la côte renseignée ne correspond à aucun document de la médiathèque");
+			response.sendRedirect("./erreurUser.jsp");
+		}
+		catch (RetourException re) {
+			session.setAttribute("erreur", "le document renseigné a déjà été retourné");
+			response.sendRedirect("./erreurUser.jsp");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+			session.setAttribute("erreur", "une erreur s'est produite");
+			response.sendRedirect("./erreurUser.jsp");
+			
 		}
     }
 }

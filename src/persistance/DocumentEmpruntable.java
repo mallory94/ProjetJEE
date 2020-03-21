@@ -13,9 +13,9 @@ public class DocumentEmpruntable implements Document {
 	private int idDocument;
 	private String NomDocument;
 	private String AuteurDocument;
-	private int IdUtilisateurEmprunteur;
+	private Integer IdUtilisateurEmprunteur;
 	
-	public DocumentEmpruntable(int idDocument, String NomDocument, String AuteurDocument, int IdUtilisateurEmprunteur) {
+	public DocumentEmpruntable(int idDocument, String NomDocument, String AuteurDocument, Integer IdUtilisateurEmprunteur) {
 		this.idDocument = idDocument;
 		this.NomDocument = NomDocument;
 		this.AuteurDocument = AuteurDocument;
@@ -30,10 +30,15 @@ public class DocumentEmpruntable implements Document {
 	@Override
 	public void emprunter(Utilisateur utilisateur) throws EmpruntException {
 		try {
+			System.out.println(IdUtilisateurEmprunteur);
+			if (IdUtilisateurEmprunteur != 0) {
+				throw new EmpruntException();
+			}
 			System.out.println("id utilisateur = " + (int) utilisateur.data()[0]);
 			System.out.println("id document = " + idDocument);
 			RequeteSQL.executeEmprunte((int) utilisateur.data()[0], idDocument);
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -41,6 +46,9 @@ public class DocumentEmpruntable implements Document {
 	@Override
 	public void rendre(Utilisateur utilisateur) throws RetourException {
 		try {
+			if (IdUtilisateurEmprunteur == 0) {
+				throw new RetourException();
+			}
 			RequeteSQL.executeRendre((int) utilisateur.data()[0], idDocument);
 		} catch (SQLException e) {
 			e.printStackTrace();
