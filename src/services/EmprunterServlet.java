@@ -32,6 +32,7 @@ public class EmprunterServlet extends HttpServlet {
 			Document doc = Mediatheque.getInstance().getDocument(numDoc); //requete qui emprunte
 			System.out.println(" id du document dans EmprunterServlet = " + doc.data()[0]);
 			Mediatheque.getInstance().emprunter(doc, user);
+			response.sendRedirect("./empruntReussi.jsp");
 		}
 		catch (Exception e) {
 			e.printStackTrace();;
