@@ -144,7 +144,6 @@ body {
   line-height: 1.6;
   position: relative;
   font-family: sans-serif;
-  overflow: hidden;
 }
 
 .lines {
@@ -236,4 +235,9 @@ body {
 
 button{
     margin-top: 20px;
+}
+
+
+#sous-titre_Liste {
+	color: #6b6969;
 }
