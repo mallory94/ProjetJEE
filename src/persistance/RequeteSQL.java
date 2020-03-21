@@ -8,6 +8,7 @@ import mediatek2020.items.Document;
 import mediatek2020.items.Utilisateur;
 
 public class RequeteSQL {
+	
 	private static String[] requetesSQL = {
 			"select * from utilisateur where IdUtilisateur = ?",
 			"select * from Document",
@@ -19,7 +20,10 @@ public class RequeteSQL {
 			
 			
 		};
+	
+	
 	private static PreparedStatement [] requetes ;
+	
 	static {
 		try {requetes = new PreparedStatement [requetesSQL.length];
 			for (int i = 0; i<requetesSQL.length;i++)
@@ -32,7 +36,7 @@ public class RequeteSQL {
 		}
 	}
 	
-	 public static Object execute(int numeroRequete, Object argument) throws Exception {	 
+	public static Object execute(int numeroRequete, Object argument) throws Exception {	 
 		switch (numeroRequete) {
 		case 0 : return execute0(argument);
 		}
@@ -44,7 +48,7 @@ public static ArrayList<Document> executeGetTousLesDocuments() {
 			PreparedStatement ps = requetes[1];
 			ArrayList<Document> liste = new ArrayList<>();
 			try {
-				synchronized (ps) {
+				synchronized (requetes) {
 					ResultSet resultat = ps.executeQuery();
 					while (resultat.next()) {
 						liste.add(new DocumentEmpruntable(resultat.getInt("IdDocument"), resultat.getString("NomDocument"), 
@@ -78,7 +82,7 @@ private static String execute0(Object argument) {
 	private static UtilisateurBibli executeGetUser(String login , String passwd) throws SQLException {
 	
 	
-		synchronized (requetes[2]) {
+		synchronized (requetes) {
 			requetes[2].setString(1,login);
 			requetes[2].setString(2,passwd);
 			try{
@@ -99,7 +103,7 @@ private static String execute0(Object argument) {
 	
 	public static Utilisateur executeGetUtilisateur(String login , String passwd) throws SQLException {
 	
-		synchronized (requetes[2]) {
+		synchronized (requetes) {
 			requetes[2].setString(1,login);
 			requetes[2].setString(2,passwd);
 			try{
@@ -121,8 +125,8 @@ private static String execute0(Object argument) {
 	}
 	
 public static Document executeGetDocument(int numDoc) throws SQLException {
-		
-		synchronized (requetes[3]) {
+		Document docRenvoyé;
+		synchronized (requetes) {
 			requetes[3].setInt(1,numDoc);
 			try{
 				ResultSet resultSet = requetes[3].executeQuery();
@@ -136,14 +140,14 @@ public static Document executeGetDocument(int numDoc) throws SQLException {
 			}
 			catch (Exception e) {
 				e.printStackTrace();
-			}		
+			}
 			return null ;
 		}
 	}
 	
 	public static boolean executeIsBibliothecaire(int idUtilisateur) throws SQLException {
 		
-		synchronized (requetes[0]) {
+		synchronized (requetes) {
 			requetes[0].setInt(1,idUtilisateur);
 
 			try{
@@ -164,7 +168,7 @@ public static Document executeGetDocument(int numDoc) throws SQLException {
 	
 	public static void executeEmprunte(int idUtilisateur, int idDocument) throws SQLException {
 
-		synchronized (requetes[4]) {
+		synchronized (requetes) {
 			requetes[4].setInt(1,idUtilisateur);
 			requetes[4].setInt(2,idDocument);
 			try{
@@ -181,7 +185,7 @@ public static Document executeGetDocument(int numDoc) throws SQLException {
 	
 	public static void executeRendre(int idUtilisateur, int idDocument) throws SQLException {
 		
-		synchronized (requetes[5]) {
+		synchronized (requetes) {
 			requetes[5].setInt(1,idDocument);
 			try{
 				Statement st = BDConnexion.getConnection().createStatement ();
@@ -193,9 +197,9 @@ public static Document executeGetDocument(int numDoc) throws SQLException {
 		}
 	}
 	
-	public static void executeNouveauDocument(String NomDocument, String AuteurDocument) throws SQLException {
+	public static void executeNouveauDocument(String NomDocument, String AuteurDocument, String Type) throws SQLException {
 		
-		synchronized (requetes[6]) {
+		synchronized (requetes) {
 			requetes[6].setString(1,NomDocument);
 			requetes[6].setString(2,AuteurDocument);
 			try{
@@ -204,7 +208,7 @@ public static Document executeGetDocument(int numDoc) throws SQLException {
 			}
 			catch (Exception e) {
 				e.printStackTrace();
-			}		
+			}
 		}
 	}
 }

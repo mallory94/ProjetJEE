@@ -52,9 +52,9 @@ public class MediathequeData implements PersistentMediatheque {
 
 	@Override
 	public void nouveauDocument(int type, Object... args) {
-		//args[0] = NomDocument | args[1] = AuteurDocument
+		//args[0] = NomDocument | args[1] = AuteurDocument | args[2] = type (livre/dvd/cd)
 		try {
-			RequeteSQL.executeNouveauDocument((String) args[0], (String)args[1]);
+			RequeteSQL.executeNouveauDocument((String) args[0], (String)args[1], (String)args[2]);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
