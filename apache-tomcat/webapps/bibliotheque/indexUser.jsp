@@ -22,7 +22,7 @@
       <h2 class="titre">Biblia.Net</h2>
 	
 	<form class="ajoutDocument-form" action="./afficherDocumentsDispos" method="post">
-		<button type="submit" name="serviceRendre" value="test">Rendre un Livre</button>
+		<button type="submit" name="serviceRendre" value="test">afficher les livres disponibles</button>
 	</form>
 	
     <form class="ajoutDocument-form" action="./emprunterDocument.jsp" method="post">
@@ -38,7 +38,7 @@
   
 
   <div class="btnRetour">
-			<h2><p><a href="./index.php?controleur=utilisateur&action=accueil">Déconnexion</a></p></h2>
+			<h2><p><a href="./deconnexion">Déconnexion</a></p></h2>
 	</div>
 </div>
 
