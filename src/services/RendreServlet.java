@@ -47,7 +47,6 @@ public class RendreServlet extends HttpServlet{
 			e.printStackTrace();
 			session.setAttribute("erreur", "une erreur s'est produite");
 			response.sendRedirect("./erreurUser.jsp");
-			
 		}
     }
 }
