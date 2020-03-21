@@ -23,7 +23,6 @@ public class EmprunterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {   
-		PrintWriter out = response.getWriter();
     	HttpSession session = request.getSession(false);
     	
     	Utilisateur user = (Utilisateur) session.getAttribute( "user" );
