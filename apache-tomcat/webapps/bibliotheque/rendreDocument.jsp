@@ -26,9 +26,9 @@
     </form>
     
   </div>
-  <!--<div class="btnRetour">
-			<h2><p><a href="./index.php?controleur=utilisateur&action=accueil">Retour</a></p></h2>
-	</div>-->
+  <div class="btnRetour">
+			<h2><p><a href="./indexUser.jsp">Retour</a></p></h2>
+	</div>
 </div>
 
 </html>
