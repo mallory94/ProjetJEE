@@ -16,7 +16,7 @@ public class RequeteSQL {
 			"select * from document where IdDocument = ?",
 			"UPDATE document SET IdUtilisateurEmprunteur = ? WHERE IdDocument = ?",
 			"UPDATE document SET IdUtilisateurEmprunteur = NULL WHERE IdDocument = ?",
-			"INSERT INTO document(NomDocument,AuteurDocument) VALUES (?,?)"
+			"INSERT INTO document(NomDocument,AuteurDocument, TypeDocument) VALUES (?,?,?)"
 			
 			
 		};
@@ -52,7 +52,7 @@ public static ArrayList<Document> executeGetTousLesDocuments() {
 					ResultSet resultat = ps.executeQuery();
 					while (resultat.next()) {
 						liste.add(new DocumentEmpruntable(resultat.getInt("IdDocument"), resultat.getString("NomDocument"), 
-								resultat.getString("AuteurDocument"), resultat.getInt("IdUtilisateurEmprunteur")));
+								resultat.getString("AuteurDocument"), resultat.getInt("IdUtilisateurEmprunteur"), resultat.getString("TypeDocument")));
 					}
 				}
 			} catch (SQLException e) {
@@ -134,7 +134,7 @@ public static Document executeGetDocument(int numDoc) throws SQLException {
 				        return null;
 				      } else {
 				    	  return new DocumentEmpruntable(resultSet.getInt("IdDocument"), resultSet.getString("NomDocument"), 
-				    			  resultSet.getString("AuteurDocument"), resultSet.getInt("IdUtilisateurEmprunteur"));
+				    			  resultSet.getString("AuteurDocument"), resultSet.getInt("IdUtilisateurEmprunteur"), resultSet.getString("TypeDocument"));
 				      }
 
 			}
@@ -197,11 +197,12 @@ public static Document executeGetDocument(int numDoc) throws SQLException {
 		}
 	}
 	
-	public static void executeNouveauDocument(String NomDocument, String AuteurDocument, String Type) throws SQLException {
+	public static void executeNouveauDocument(String NomDocument, String AuteurDocument, String TypeDocument) throws SQLException {
 		
 		synchronized (requetes) {
 			requetes[6].setString(1,NomDocument);
 			requetes[6].setString(2,AuteurDocument);
+			requetes[6].setString(3,TypeDocument);
 			try{
 				Statement st = BDConnexion.getConnection().createStatement ();
 				int b = requetes[6].executeUpdate();
