@@ -18,8 +18,8 @@ rem ---------------------------------------------------------------------------
 rem Stop script for the CATALINA Server
 rem ---------------------------------------------------------------------------
 
-set CATALINA_HOME=Z:\ProjetJEE\apache-tomcat
-set JRE_HOME=C:\Program Files\Java\jre1.8.0_211
+set CATALINA_HOME=C:\Users\mallory\Documents\Code\ProjetJEE\ProjetJEE\apache-tomcat
+set JRE_HOME=C:\Program Files\Java\jre1.8.0_201
 
 setlocal
 
