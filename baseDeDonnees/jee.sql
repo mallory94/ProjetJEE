@@ -106,13 +106,15 @@ INSERT INTO utilisateur(LoginUtilisateur,PasswordUtilisateur,Bibliothequaire) VA
 SELECT * FROM utilisateur;
 
 PROMPT *** INSERT INTO DOCUMENT***
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Fairest of ALL','Serena Valentino', 'livre');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('The Beast Within','Serena Valentino', 'livre');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Poor Unfortunate Soul','Serena Valentino', 'livre');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Mistress of All Evil','Serena Valentino', 'livre');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Mother Knows Best','Serena Valentino', 'livre');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('The Odd Sisters','Serena Valentino', 'livre');
-INSERT INTO document(NomDocument,AuteurDocument) VALUES ('Evil Thing','Serena Valentino', 'livre');
+INSERT INTO document(NomDocument,AuteurDocument,TypeDocument) VALUES ('Fairest of ALL','Serena Valentino', 'Livre');
+INSERT INTO document(NomDocument,AuteurDocument,TypeDocument) VALUES ('The Beast Within','Serena Valentino', 'Livre');
+INSERT INTO document(NomDocument,AuteurDocument,TypeDocument) VALUES ('Poor Unfortunate Soul','Serena Valentino', 'Livre');
+INSERT INTO document(NomDocument,AuteurDocument,TypeDocument) VALUES ('Mistress of All Evil','Serena Valentino', 'Livre');
+INSERT INTO document(NomDocument,AuteurDocument,TypeDocument) VALUES ('Mother Knows Best','Serena Valentino', 'Livre');
+INSERT INTO document(NomDocument,AuteurDocument,TypeDocument) VALUES ('The Odd Sisters','Serena Valentino', 'Livre');
+INSERT INTO document(NomDocument,AuteurDocument,TypeDocument) VALUES ('Evil Thing','Serena Valentino', 'Livre');
+INSERT INTO document(NomDocument,AuteurDocument,TypeDocument) VALUES ('Avatar','James Cameron', 'DVD');
+INSERT INTO document(NomDocument,AuteurDocument,TypeDocument) VALUES ('Random Access Memories','Daft Punk', 'CD');
 SELECT * FROM document;
 
 PROMPT *** AJOUT D UN EMPRUNT***
