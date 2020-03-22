@@ -13,6 +13,8 @@ import mediatek2020.Mediatheque;
 import mediatek2020.items.Document;
 
 public class ListeDocumentsDispoServlet extends HttpServlet{
+
+	private static final long serialVersionUID = -8889400914687619082L;
 	private final int indiceIdEmprunter = 3;
 	private final int numeroDocNonEmprunte = 0;
 	

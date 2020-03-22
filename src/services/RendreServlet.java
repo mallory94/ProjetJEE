@@ -16,6 +16,8 @@ import mediatek2020.items.Utilisateur;
 public class RendreServlet extends HttpServlet{
 	
 
+	private static final long serialVersionUID = -742790723179186682L;
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {   
     	HttpSession session = request.getSession(false);
