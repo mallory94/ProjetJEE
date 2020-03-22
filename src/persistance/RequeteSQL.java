@@ -3,7 +3,6 @@ package persistance;
 import java.sql.*;
 import java.util.ArrayList;
 
-import mediatek2020.Mediatheque;
 import mediatek2020.items.Document;
 import mediatek2020.items.Utilisateur;
 
@@ -35,13 +34,6 @@ public class RequeteSQL {
 			System.exit(1);
 		}
 	}
-	
-	public static Object execute(int numeroRequete, Object argument) throws Exception {	 
-		switch (numeroRequete) {
-		case 0 : return execute0(argument);
-		}
-		return null;
-	}
 	 
 
 public static ArrayList<Document> executeGetTousLesDocuments() {
@@ -60,156 +52,130 @@ public static ArrayList<Document> executeGetTousLesDocuments() {
 			}
 			return liste;
 		}
-	 
-private static String execute0(Object argument) {
-			String reponse = null;
-			PreparedStatement ps = requetes[0];
-			synchronized (ps) {
-				try{
-					ps.setString(1,(String) argument);
-					ResultSet resultat = ps.executeQuery();
-					// mise en forme du resultset
-					while (resultat.next())
-						reponse += resultat.getString("numvol")+" "+resultat.getDate("heuredepart")+" "+
-							resultat.getString("villearrivee")+"***";
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			return reponse;
-		}
 
-	private static UtilisateurBibli executeGetUser(String login , String passwd) throws SQLException {
-	
-	
-		synchronized (requetes) {
-			requetes[2].setString(1,login);
-			requetes[2].setString(2,passwd);
-			try{
-				ResultSet resultSet = requetes[2].executeQuery();
-				 if (resultSet.next() == false) {
-				        return null;
-				      } else {
-				          return new UtilisateurBibli(resultSet.getInt("IdUtilisateur"), resultSet.getString("LoginUtilisateur"),
-				        		  (resultSet.getInt("Bibliothequaire") == 1));
-				      }
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}		
-			return null ;
-		}
-	}
 	
 	public static Utilisateur executeGetUtilisateur(String login , String passwd) throws SQLException {
 	
-		synchronized (requetes) {
+		
 			requetes[2].setString(1,login);
 			requetes[2].setString(2,passwd);
 			try{
-				ResultSet resultSet = requetes[2].executeQuery();
-				 if (resultSet.next() == false) {
-				        return null;
-				      } else {
-				    	  System.out.println("id user = "  + resultSet.getInt("IdUtilisateur"));
-				          return new UtilisateurBibli(resultSet.getInt("IdUtilisateur"), resultSet.getString("LoginUtilisateur"), 
-				        		  resultSet.getInt("Bibliothequaire") == 1);
-				      }
+				synchronized (requetes) {
+					ResultSet resultSet = requetes[2].executeQuery();
+					if (resultSet.next() == false) {
+					       return null;
+				    } 
+					else {
+						System.out.println("id user = "  + resultSet.getInt("IdUtilisateur"));
+						return new UtilisateurBibli(resultSet.getInt("IdUtilisateur"), resultSet.getString("LoginUtilisateur"), 
+					        		  resultSet.getInt("Bibliothequaire") == 1);
+					}
+				}
 
 			}
 			catch (Exception e) {
 				e.printStackTrace();
 			}		
 			return null ;
-		}
+		
 	}
 	
 public static Document executeGetDocument(int numDoc) throws SQLException {
-		Document docRenvoyé;
-		synchronized (requetes) {
+		
 			requetes[3].setInt(1,numDoc);
 			try{
+				synchronized (requetes) {
 				ResultSet resultSet = requetes[3].executeQuery();
 				 if (resultSet.next() == false) {
 				        return null;
-				      } else {
-				    	  return new DocumentEmpruntable(resultSet.getInt("IdDocument"), resultSet.getString("NomDocument"), 
-				    			  resultSet.getString("AuteurDocument"), resultSet.getInt("IdUtilisateurEmprunteur"), resultSet.getString("TypeDocument"));
-				      }
-
+			      } 
+				 else {
+			    	  return new DocumentEmpruntable(resultSet.getInt("IdDocument"), resultSet.getString("NomDocument"), 
+			    			  resultSet.getString("AuteurDocument"), resultSet.getInt("IdUtilisateurEmprunteur"), resultSet.getString("TypeDocument"));
+			      }
+				}
 			}
 			catch (Exception e) {
 				e.printStackTrace();
 			}
 			return null ;
-		}
+		
 	}
 	
 	public static boolean executeIsBibliothecaire(int idUtilisateur) throws SQLException {
 		
-		synchronized (requetes) {
+		
 			requetes[0].setInt(1,idUtilisateur);
 
 			try{
+				synchronized (requetes) {
 				ResultSet resultSet = requetes[0].executeQuery();
-				 if (resultSet.next() == false) {
-				        return false;
-				      } else {
-				    	  return resultSet.getBoolean("Bibliothequaire");
-				      }
+					if (resultSet.next() == false) {
+				       return false;
+					} 
+					else {
+						 return resultSet.getBoolean("Bibliothequaire");
+					}
+				}
 			}
 			catch (Exception e) {
 				e.printStackTrace();
 			}
 			return false ;
-		}
+		
 	}
 	
 	
 	public static void executeEmprunte(int idUtilisateur, int idDocument) throws SQLException {
 
-		synchronized (requetes) {
+		
 			requetes[4].setInt(1,idUtilisateur);
 			requetes[4].setInt(2,idDocument);
 			try{
-				Statement st = BDConnexion.getConnection().createStatement ();
-				int b = requetes[4].executeUpdate();
+				synchronized (requetes) {
+					Statement st = BDConnexion.getConnection().createStatement ();
+					int b = requetes[4].executeUpdate();
+				}
 			}
 			catch (Exception e) {
 				e.printStackTrace();
 			}		
-		}
+		
 	}
 	
 	
 	
 	public static void executeRendre(int idUtilisateur, int idDocument) throws SQLException {
 		
-		synchronized (requetes) {
+		
 			requetes[5].setInt(1,idDocument);
 			try{
-				Statement st = BDConnexion.getConnection().createStatement ();
-				int b = requetes[5].executeUpdate();
+				synchronized (requetes) {
+					Statement st = BDConnexion.getConnection().createStatement ();
+					int b = requetes[5].executeUpdate();
+				}
 			}
 			catch (Exception e) {
 				e.printStackTrace();
 			}		
-		}
+		
 	}
 	
 	public static void executeNouveauDocument(String NomDocument, String AuteurDocument, String TypeDocument) throws SQLException {
 		
-		synchronized (requetes) {
+		
 			requetes[6].setString(1,NomDocument);
 			requetes[6].setString(2,AuteurDocument);
 			requetes[6].setString(3,TypeDocument);
 			try{
-				Statement st = BDConnexion.getConnection().createStatement ();
-				int b = requetes[6].executeUpdate();
+				synchronized (requetes) {
+					Statement st = BDConnexion.getConnection().createStatement ();
+					int b = requetes[6].executeUpdate();
+				}
 			}
 			catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		
 	}
 }

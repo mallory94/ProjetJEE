@@ -9,8 +9,6 @@ import javax.servlet.http.*;
 
 import mediatek2020.Mediatheque;
 import mediatek2020.items.Utilisateur;
-import persistance.MediathequeData;
-import persistance.RequeteSQL;
 
 public class AuthentificationServlet extends HttpServlet {
     /**

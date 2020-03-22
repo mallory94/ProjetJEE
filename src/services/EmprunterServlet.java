@@ -1,9 +1,6 @@
 package services;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -12,8 +9,6 @@ import mediatek2020.RechercheDocException;
 import mediatek2020.items.Document;
 import mediatek2020.items.EmpruntException;
 import mediatek2020.items.Utilisateur;
-import persistance.MediathequeData;
-import persistance.RequeteSQL;
 
 public class EmprunterServlet extends HttpServlet {
     /**
